@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>My Portfolio</title>
+
+  <style>
+    /* Image Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 90%;
+      animation: zoom 0.3s ease;
+    }
+
+    @keyframes zoom {
+      from {
+        transform: scale(0.7);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+   
+  </style>
+</head>
+
+<body>
+  <section class="header">
+    <!-- Header Content -->
+  </section>
+
+  <!-- Filters Container -->
+  <section class="body__container">
+    <div class="filter__container">
+      <div class="filter_buttons">
+        <button class="filter-btn active" data-name="Art and Crafts">Art and Crafts</button>
+        <button class="filter-btn" data-name="Drawings">Drawings</button>
+        <button class="filter-btn" data-name="Saree Paintings">Saree Paintings</button>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div class="card" data-name="Art and Crafts">
+          <img class="card__image" src="./assets/images/LaptopStand.jpeg" alt="Art and Crafts Image" />
+
+       
+      </div>
+
+      <div class="card" data-name="Drawings">
+          <img class="card__image" src="./assets/images/card2.jpg" alt="Drawings Image" />
+        
+      </div>
+
+      <div class="card" data-name="Saree Paintings">
+          <img class="card__image" src="./assets/images/SareePainting1.jpeg" alt="Saree Paintings Image" />
+        
+      </div>
+
+      <div class="card" data-name="Saree Paintings">
+       
+          <img class="card__image" src="./assets/images/SareePainting2.jpeg" alt="Saree Paintings Image" />
+          
+      
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <script src="./assets/js/index.js"></script>
+  <script>
+    // Enlarge image on click
+    document.querySelectorAll('.card__image').forEach(img => {
+      img.addEventListener('click', () => {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+
+    // Close modal when "x" is clicked
+    document.querySelector(".close").addEventListener('click', () => {
+      document.getElementById("imageModal").style.display = "none";
+    });
+
+    // Optional: Close modal when clicking outside the image
+    window.addEventListener('click', (event) => {
+      const modal = document.getElementById("imageModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+</body>
+
+</html>
