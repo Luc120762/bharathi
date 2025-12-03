@@ -357,16 +357,11 @@ button.filter-btn {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0);
 }
 .card__header {
-  position: relative;
   display: flex;
-  align-items: center;
-  gap: 2rem;
-  background-color: rgba(33, 33, 33, 0.9);
-  padding: 1em;
-  transform: translateY(-100%);
-  transition: 0.3s ease-in-out;
-  font-size: 16px;
+  justify-content: center; /* centers content horizontally */
+  align-items: center; /* centers content vertically */
   font-family: "manrope-regular";
+  font-size: 16px;
 }
 .card:hover .card__header {
   transform: translateY(0);
