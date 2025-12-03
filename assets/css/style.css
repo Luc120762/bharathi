@@ -382,14 +382,13 @@ button.filter-btn {
 }
 .card__title {
   font-size: 16px;
-  text-align: center;
   font-family: "manrope-bold";
 }
 .card__status {
   font-size: 16px;
 }
 .card__descraption-box {
-  padding: 1em;
+  padding: 0 1em 0 1em;
   font-size: 16px;
 }
 .card__descraption-title {
