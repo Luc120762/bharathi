@@ -382,7 +382,7 @@ button.filter-btn {
 }
 .card__title {
   font-size: 16px;
-  text-align: left;
+  text-align: center;
   font-family: "manrope-bold";
 }
 .card__status {
