@@ -389,7 +389,7 @@ button.filter-btn {
   font-size: 16px;
 }
 .card__descraption-box {
-  padding: 0 2em 0 7em;
+  position: relative;
   font-size: 16px;
 }
 .card__descraption-title {
