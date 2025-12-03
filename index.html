@@ -516,6 +516,32 @@
         modal.style.display = "none";
       }
     });
+
+// Shuffle elements in a container
+function shuffleCards() {
+    const container = document.querySelector('.card-container');
+    const cards = Array.from(container.children);
+
+    // Fisher–Yates shuffle
+    for (let i = cards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        container.appendChild(cards[j]);
+        cards.splice(j, 1);
+    }
+}
+
+// Shuffle on page load
+shuffleCards();
+
+
+// Re-shuffle cards when filter button is clicked
+document.querySelectorAll(".filter-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        setTimeout(() => shuffleCards(), 50); 
+    });
+});
+
+	  
   </script>
 </body>
 
