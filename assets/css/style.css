@@ -360,6 +360,9 @@ button.filter-btn {
   display: flex;
   justify-content: center; /* centers content horizontally */
   align-items: center; /* centers content vertically */
+  background-color: rgba(33, 33, 33, 0.9);
+  transform: translateY(-100%);
+  transition: 0.3s ease-in-out;
   font-family: "manrope-regular";
   font-size: 16px;
 }
